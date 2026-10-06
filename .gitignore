@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment files
+.env
+server/.env
+client/.env
+
+# Uploads and temporary files
+server/uploads/*
+!server/uploads/.gitkeep
+*.log
+.DS_Store
+
+# Build artifacts
+client/dist/
+client/build/
+client/.vite/
+.vite/
+
+# Local runner helpers
+powershell.cmd
+server/powershell.cmd
+client/powershell.cmd
+

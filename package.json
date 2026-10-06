@@ -1,0 +1,23 @@
+{
+  "name": "personal-academic-management-system",
+  "version": "1.0.0",
+  "description": "Full-stack Personal Academic, Portfolio & Learning Management Website",
+  "scripts": {
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix client run build"
+  },
+  "keywords": [
+    "portfolio",
+    "academic",
+    "course-tracker",
+    "learning-management",
+    "mongodb",
+    "express",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC"
+}
