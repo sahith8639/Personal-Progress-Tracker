@@ -70,6 +70,19 @@ app.use('/api/upload', uploadRoutes);
 // Error handling middleware
 app.use(errorHandler);
 
+// Serve static frontend in production if client/dist exists
+const clientDist = path.join(__dirname, '../client/dist');
+const fs = require('fs');
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
